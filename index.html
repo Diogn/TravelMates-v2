@@ -4,10 +4,10 @@
     <meta charset="utf-8">
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <title>TravelMates v2</title>
-    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
+    <link rel="canonical" href="https://ampbyexample.com/components/amp-img/">
     <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
     <script type="application/ld+json">
-      <!-- {
+      {
         "@context": "http://schema.org",
         "@type": "NewsArticle",
         "headline": "Open-source framework for publishing content",
@@ -15,26 +15,88 @@
         "image": [
           "logo.jpg"
         ]
-      } -->
+      }
     </script>
+    <script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+    <style amp-custom>
+      /* global */
+      a {
+        text-decoration: none;
+        color: #000;
+      }
+      ul {
+        margin: 0; padding: 0;
+        display: flex;
+        justify-content: flex-end;
+        height: 100%;
+      }
+      li {
+        list-style: none;
+        margin-right: 10px;
+        height: 100%;
+      }
+      .mini-spacer {
+        width: 100%;
+        height: 5vh;
+      }
+      .container {
+        max-width: 1140px !important;
+        width: 100%;
+        margin: 0 auto;
+      }
+
+      /* private section */
+      .home-button {
+        margin-top: 8px;
+        margin-left: 10px;
+      }
+      .headerbar {
+        margin-top: 15px;
+        height: 50px;
+        /* position: fixed; */
+        z-index: 999;
+        top: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+      }
+      .navbar-list {
+        width: 100%;
+        height: 100%;
+      }
+      .navbar-item:hover {
+        background-color: bisque;
+        height: 100%;
+      }
+
+    </style>
   </head>
   <body>
-    <h1>Welcome to the mobile web</h1>
-    <!-- <amp-img 
-      src="./assets/logo-travelmates.jpg" 
-      alt="TravelMates Logo" 
-      height="50" width="80">
-      <noscript>
-        <img src="./assets/logo-travelmates.jpg" width="80" height="50" alt="Travelmates Logo">
-      </noscript>
-    </amp-img> -->
-    <amp-img alt="a view of travel"
-      src="./assets/lets-go.jpeg"
-      width="1690"
-      height="500"
-      layout="responsive">
+    <div class="container">
+      <header class="headerbar">
+        <a href="homepage.html">
+          <amp-img class="home-button" src="./assets/logo-travelmates-big.jpg" width="226" height="56"></amp-img>
+        </a>
+        <div class="navbar-list">
+          <ul>
+            <a href="#" class="nav-link"><li class="navbar-item">Home</li></a>
+            <a href="#" class="nav-link"><li class="navbar-item">Rekomendasi</li></a>
+            <a href="#" class="nav-link"><li class="navbar-item">Bersama Kami</li></a>
+            <a href="#" class="nav-link"><li class="navbar-item">Contact Us!</li></a>
+          </ul>
+        </div>
+      </header>
+      <div class="mini-spacer"></div>
 
-    </amp-img>
+      <amp-img alt="a view of travel"
+        src="./assets/lets-go.jpeg"
+        width="1080"
+        height="300"
+        layout="responsive">
+        <div fallback>offline</div>
+      </amp-img>
+    </div>
   </body>
 </html>
