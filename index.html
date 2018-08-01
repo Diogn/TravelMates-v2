@@ -22,24 +22,33 @@
 
     <style amp-custom>
       /* global */
+      * {
+        margin: 0; padding: 0; outline: 0;
+        box-sizing: border-box;
+        font-size: 16px;
+      }
       a {
         text-decoration: none;
         color: #000;
       }
       ul {
+        width: 100%;
         margin: 0; padding: 0;
         display: flex;
         justify-content: flex-end;
-        height: 100%;
+        height: auto;
       }
       li {
         list-style: none;
-        margin-right: 10px;
         height: 100%;
       }
       .mini-spacer {
         width: 100%;
-        height: 5vh;
+        height: 18vh;
+      }
+      .full-contain {
+        max-width: 100% !important;
+        margin: 0; padding: 0;
       }
       .container {
         max-width: 1140px !important;
@@ -49,47 +58,60 @@
 
       /* private section */
       .home-button {
-        margin-top: 8px;
+        margin-top: 0px;
         margin-left: 10px;
       }
+
+      /* Navbar */
       .headerbar {
         margin-top: 15px;
         height: 50px;
-        /* position: fixed; */
+        position: fixed;
         z-index: 999;
         top: 0;
-        width: 100%;
+        width: 1140px;
         display: flex;
         align-items: center;
+        align-content: center;
       }
       .navbar-list {
         width: 100%;
-        height: 100%;
+        height: auto;
+        
       }
       .navbar-item:hover {
-        background-color: bisque;
+        background-color: #bdc9c7;
         height: 100%;
+        font-weight: 600;
+      }
+      li.navbar-item {
+        font-size: 20px;
+        padding: 20px 20px;
+        font-weight: 300;
       }
 
     </style>
   </head>
   <body>
-    <div class="container">
-      <header class="headerbar">
-        <a href="homepage.html">
-          <amp-img class="home-button" src="./assets/logo-travelmates-big.jpg" width="226" height="56"></amp-img>
-        </a>
-        <div class="navbar-list">
-          <ul>
-            <a href="#" class="nav-link"><li class="navbar-item">Home</li></a>
-            <a href="#" class="nav-link"><li class="navbar-item">Rekomendasi</li></a>
-            <a href="#" class="nav-link"><li class="navbar-item">Bersama Kami</li></a>
-            <a href="#" class="nav-link"><li class="navbar-item">Contact Us!</li></a>
-          </ul>
-        </div>
-      </header>
-      <div class="mini-spacer"></div>
-
+    <div class="full-contain">
+      <div class="container">
+        <header class="headerbar">
+          <a href="homepage.html">
+            <amp-img class="home-button" src="./assets/logo-travelmates-big.jpg" width="226" height="50"></amp-img>
+          </a>
+          <div class="navbar-list">
+            <ul>
+              <a href="#" class="nav-link"><li class="navbar-item">Home</li></a>
+              <a href="#" class="nav-link"><li class="navbar-item">Rekomendasi</li></a>
+              <a href="#" class="nav-link"><li class="navbar-item">Bersama Kami</li></a>
+              <a href="#" class="nav-link"><li class="navbar-item">Contact Us!</li></a>
+            </ul>
+          </div>
+          
+        </header>
+        <div class="mini-spacer"></div>
+      </div>
+        
       <amp-img alt="a view of travel"
         src="./assets/lets-go.jpeg"
         width="1080"
@@ -97,6 +119,8 @@
         layout="responsive">
         <div fallback>offline</div>
       </amp-img>
+      
     </div>
+    
   </body>
 </html>
